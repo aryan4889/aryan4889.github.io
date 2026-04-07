@@ -667,18 +667,39 @@ footer{
   <div class="footer-copy">© 2026 · Dublin, Ireland · Designed &amp; built from scratch</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const io = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('in'), i * 80);
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+<script>
+// Make all reveal elements visible immediately as fallback
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+  el.classList.add('in');
+});
 
+// Then add scroll animation on top if IntersectionObserver is supported
+if ('IntersectionObserver' in window) {
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    el.classList.remove('in');
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+}
+
+// Skill bars
 const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      const b
+      const bar = e.target;
+      setTimeout(() => { bar.style.width = bar.dataset.w + '%'; }, 200);
+      barObs.unobserve(bar);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.sk-bar').forEach(b => barObs.observe(b));
+</script>
+</body>
+</html>
