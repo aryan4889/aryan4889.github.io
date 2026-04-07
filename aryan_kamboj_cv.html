@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aryan Kamboj — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f0f0f0;
+    color: #1a1a1a;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .print-btn {
+    display: block;
+    width: fit-content;
+    margin: 16px auto;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 9px 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .print-btn:hover { background: #333; }
+  @media print { .print-btn { display: none; } body { background: #fff; } }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 24px;
+    background: #fff;
+    padding: 18mm 18mm 16mm 18mm;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+  }
+  .header .role {
+    font-size: 10pt;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .contact-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    font-size: 8.5pt;
+    color: #444;
+  }
+  .contact-line span { display: flex; align-items: center; gap: 4px; }
+  .contact-line a { color: #444; text-decoration: none; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 14px; }
+  .section-title {
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+  }
+
+  /* ── PROFILE ── */
+  .profile p {
+    font-size: 9.5pt;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  /* ── EXPERIENCE / PROJECT ENTRY ── */
+  .entry { margin-bottom: 11px; }
+  .entry-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 1px;
+  }
+  .entry-title { font-size: 10pt; font-weight: 700; color: #1a1a1a; }
+  .entry-date  { font-size: 8.5pt; color: #777; white-space: nowrap; flex-shrink: 0; }
+  .entry-sub   { font-size: 9pt; font-weight: 500; color: #555; margin-bottom: 4px; }
+  .entry-tags  { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 5px; }
+  .tag {
+    font-size: 7.5pt; font-weight: 600;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 1px 7px;
+    border-radius: 2px;
+  }
+  .entry ul { padding-left: 14px; }
+  .entry ul li {
+    font-size: 9pt;
+    color: #333;
+    margin-bottom: 2px;
+    line-height: 1.55;
+  }
+  .proj-link {
+    font-size: 8pt;
+    color: #555;
+    margin-top: 3px;
+    font-style: italic;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .skill-col { }
+  .skill-col-label {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .skill-col p {
+    font-size: 8.5pt;
+    color: #444;
+    line-height: 1.65;
+  }
+
+  /* ── EDUCATION ROW ── */
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .edu-left { }
+  .edu-degree { font-size: 9.5pt; font-weight: 700; color: #1a1a1a; }
+  .edu-school { font-size: 9pt; color: #555; margin-top: 1px; }
+  .edu-date   { font-size: 8.5pt; color: #777; white-space: nowrap; flex-shrink: 0; }
+
+  /* ── CERTS ROW ── */
+  .cert-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 9pt;
+    color: #444;
+  }
+  .cert-row span { color: #777; margin-left: 4px; font-size: 8.5pt; }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">⬇ Save as PDF</button>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Aryan Kamboj</h1>
+    <div class="role">Data Analyst &nbsp;·&nbsp; Business Analytics MSc Student</div>
+    <div class="contact-line">
+      <span>📍 Dublin, Ireland</span>
+      <span>✉ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6a7b4bfa7a8e8ada7aba4a9ac86a3aba7afaae8a5a9ab">[email&#160;protected]</a></span>
+      <span>📞 +353 89 XXX XXXX</span>
+      <span><a href="#">linkedin.com/in/aryan-kamboj</a></span>
+      <span><a href="#">aryan4889.github.io</a></span>
+      <span>Stamp 2 · 20 hrs/wk</span>
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="section profile">
+    <div class="section-title">Profile</div>
+    <p>BCA graduate and MSc Business Analytics student at National College of Ireland, Dublin. Skilled in SQL, Excel, Python and Power BI, with hands-on experience building end-to-end data projects using real Irish datasets. Proven ability to turn complex data into clear, business-ready insights for non-technical stakeholders. Actively seeking a junior Data Analyst or Business Analyst role in Ireland.</p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Data Analytics Intern</div>
+        <div class="entry-date">2023 – 2024</div>
+      </div>
+      <div class="entry-sub">Vaco Binary Semantics LLP · India</div>
+      <ul>
+        <li>Cleaned and structured datasets of 10,000+ rows in Excel and SQL for weekly management reporting.</li>
+        <li>Built KPI dashboards and performance reports shared with senior stakeholders, improving visibility of sales and operations data.</li>
+        <li>Assisted in validating ETL processes and flagging data quality issues across business units.</li>
+        <li>Supported creation of basic Power BI dashboards to track customer activity and pipeline metrics.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Analytics Projects</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Irish Rental Market Intelligence Dashboard</div>
+        <div class="entry-date">Jan 2026</div>
+      </div>
+      <div class="entry-tags">
+        <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Daft.ie Data</span>
+      </div>
+      <ul>
+        <li>Scraped and cleaned 5,000+ rental listings from Daft.ie, structured data in SQL and built an interactive Power BI dashboard covering Dublin, Cork and Galway.</li>
+        <li>Identified a 12% YoY rent increase in South Dublin vs 7% in Cork — delivered as a business investment report.</li>
+      </ul>
+      <div class="proj-link">🔗 aryan4889.github.io/project-rental</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">An Garda Síochána Crime Trends Analyser</div>
+        <div class="entry-date">Feb 2026</div>
+      </div>
+      <div class="entry-tags">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Excel</span><span class="tag">CSO Open Data</span>
+      </div>
+      <ul>
+        <li>Analysed 10 years of recorded crime data across all 26 Irish counties; found fraud/cybercrime rose 197% while theft fell 34% post-2020.</li>
+        <li>Built a dynamic Excel model with slicers and produced a 2-page executive briefing for a hypothetical insurance analytics team.</li>
+      </ul>
+      <div class="proj-link">🔗 aryan4889.github.io/project-crime</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">E-Commerce Sales Performance Tracker</div>
+        <div class="entry-date">Dec 2025</div>
+      </div>
+      <div class="entry-tags">
+        <span class="tag">SQL</span><span class="tag">SQLite</span><span class="tag">Python</span><span class="tag">Tableau</span>
+      </div>
+      <ul>
+        <li>Designed a 4-table relational SQLite database; wrote SQL queries for customer LTV, return rates and MoM revenue growth.</li>
+        <li>Automated weekly Excel report generation using Python — demonstrating a full BI pipeline from raw data to stakeholder output.</li>
+      </ul>
+      <div class="proj-link">🔗 aryan4889.github.io/project-ecommerce</div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-col">
+        <div class="skill-col-label">Data & Query</div>
+        <p>SQL · MySQL · SQLite<br>Joins · CTEs · Window Functions<br>Data Cleaning & Validation</p>
+      </div>
+      <div class="skill-col">
+        <div class="skill-col-label">Visualisation</div>
+        <p>Power BI · Tableau<br>Excel (Pivot Tables, Power Query)<br>KPI Dashboards & Reporting</p>
+      </div>
+      <div class="skill-col">
+        <div class="skill-col-label">Other</div>
+        <p>Python (pandas, matplotlib)<br>GitHub · Agile basics<br>Data Storytelling</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-row">
+      <div class="edu-left">
+        <div class="edu-degree">MSc Business Analytics for Decision Making</div>
+        <div class="edu-school">National College of Ireland · Dublin</div>
+      </div>
+      <div class="edu-date">Sep 2025 – Nov 2026</div>
+    </div>
+    <div class="edu-row">
+      <div class="edu-left">
+        <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+        <div class="edu-school">India</div>
+      </div>
+      <div class="edu-date">Graduated 2023</div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <div class="cert-row">
+      <div>Google Data Analytics<span>Coursera · 2024</span></div>
+      <div>SQL for Data Science<span>UC Davis / Coursera · 2024</sp
